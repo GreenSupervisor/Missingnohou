@@ -7,6 +7,8 @@
 
 #include "Resources.hpp"
 
+
+
 namespace Resources{
 
 map<string, sf::Font> fontMap;
@@ -14,6 +16,7 @@ map<string, sf::Texture> texMap;
 
 sf::RenderWindow gameWindow;
 
+Config *lvlCfg;
 
 sf::Font& getFont(string fontName){
 	return Resources::fontMap[fontName];
@@ -60,5 +63,42 @@ void draw(const sf::Drawable& drawable){
 sf::RenderWindow& getWindow(){
 	return gameWindow;
 }
+
+
+
+extern void setLvlCfg(Config &newCfg){
+
+	lvlCfg = &newCfg;
+
+}
+
+bool fillCfgVariable (string cfgVarName, bool &value){
+
+
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, int &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, unsigned int &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, long long &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, unsigned long long &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, float &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, double &value){
+	return true;
+}
+bool fillCfgVariable (string cfgVarName, string &value){
+	return true;
+}
+
+
 
 }

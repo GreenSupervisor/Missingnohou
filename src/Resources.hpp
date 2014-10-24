@@ -28,9 +28,25 @@ extern sf::Texture& getTexture(string texName);
 extern void addTexture(string texName, string texFile);
 
 
+
 extern void draw(const sf::Drawable& drawable);
 
 extern sf::RenderWindow& getWindow();
+
+extern void setLvlCfg(Config &newCfg);
+
+
+
+
+extern bool fillCfgVariable (string cfgVarName, bool &value);
+extern bool fillCfgVariable (string cfgVarName, int &value);
+extern bool fillCfgVariable (string cfgVarName, unsigned int &value);
+extern bool fillCfgVariable (string cfgVarName, long long &value);
+extern bool fillCfgVariable (string cfgVarName, unsigned long long &value);
+extern bool fillCfgVariable (string cfgVarName, float &value);
+extern bool fillCfgVariable (string cfgVarName, double &value);
+extern bool fillCfgVariable (string cfgVarName, string &value);
+
 
 }
 
