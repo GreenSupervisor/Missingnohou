@@ -33,7 +33,7 @@ extern void draw(const sf::Drawable& drawable);
 
 extern sf::RenderWindow& getWindow();
 
-extern void setLvlCfg(Config &newCfg);
+extern void setLvlCfg(const char *cfgFileName);
 
 
 

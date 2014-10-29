@@ -66,37 +66,39 @@ sf::RenderWindow& getWindow(){
 
 
 
-extern void setLvlCfg(Config &newCfg){
+extern Config* getLvlCfg(){
+	return lvlCfg;
+}
 
-	lvlCfg = &newCfg;
-
+extern void setLvlCfg(const char *cfgFileName){
+	Config *cfg = new Config();
+	cfg->readFile(cfgFileName);
+	lvlCfg = cfg;
 }
 
 bool fillCfgVariable (string cfgVarName, bool &value){
-
-
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, int &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, unsigned int &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, long long &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, unsigned long long &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, float &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, double &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 bool fillCfgVariable (string cfgVarName, string &value){
-	return true;
+	return lvlCfg->lookupValue(cfgVarName, value);
 }
 
 

@@ -17,7 +17,6 @@ Game::Game() {
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
 
-
 	//Load Fonts
 	Resources::addFont("default", "resources/fonts/FiraSans-Light.ttf");
 	Resources::addFont("fun", "resources/fonts/chinacatthin.ttf");
@@ -31,6 +30,15 @@ Game::Game() {
 	Resources::addTexture("pidgey", texPath + "pidgey.png");
 
 
+
+
+	Resources::setLvlCfg("resources/configs/level-1.cfg");
+
+
+	int xThing = 0;
+	Resources::fillCfgVariable("enemy1.vel.x", xThing);
+
+	cout << "xThing" << xThing << endl;
 
 	//some values
 	gameWidth = 500;
