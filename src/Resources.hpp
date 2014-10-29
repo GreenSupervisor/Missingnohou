@@ -33,11 +33,10 @@ extern void draw(const sf::Drawable& drawable);
 
 extern sf::RenderWindow& getWindow();
 
+
 extern void setLvlCfg(const char *cfgFileName);
 
-
-
-
+//TODO maybe lower the amount of variables allowed?
 extern bool fillCfgVariable (string cfgVarName, bool &value);
 extern bool fillCfgVariable (string cfgVarName, int &value);
 extern bool fillCfgVariable (string cfgVarName, unsigned int &value);
