@@ -6,7 +6,8 @@
  */
 
 #include "Game.hpp"
-
+#include "Animation.hpp"
+#include "AnimatedSprite.hpp"
 
 enum gameMode { PAUSED, PLAYING };
 
@@ -28,7 +29,7 @@ Game::Game() {
 	Resources::addTexture("missingno", texPath + "missingno.png");
 	Resources::addTexture("bullet", texPath + "bullet.png");
 	Resources::addTexture("pidgey", texPath + "pidgey.png");
-
+	Resources::addTexture("testSprSheet", texPath + "sprite-example.png");
 
 
 
@@ -89,9 +90,32 @@ void Game::start(){
 
 	Entities::addEntity(ENEMY, new Enemy(sf::Vector2f(50, 50)));
 
+
+
+	Animation animTest;
+	animTest.setSpriteSheet(Resources::getTexture("testSprSheet"));
+
+	for (int i = 0; i < 3; i++){
+		for (int j = 0; j < 4; j++){
+			sf::IntRect spriteRect(i*32, j*32, 32, 32);
+			animTest.addFrame(spriteRect);
+		}
+	}
+	AnimatedSprite animSprTest(sf::seconds(0.2), true, false);
+	animSprTest.setPosition(50,50);
+	animSprTest.play(animTest);
+	animSprTest.setLooped(true);
+	sf::Time frameTime;
+
+
+
 	cout << "Window Starting Now:" << endl;
 
 	while(Resources::getWindow().isOpen()){
+		//get time ingetween frames
+
+
+
 		//handle some events
 		sf::Event event;
 		while(Resources::getWindow().pollEvent(event)){
@@ -136,7 +160,7 @@ void Game::start(){
 		if (currentMode == PLAYING){
 
 			dt = sfmlClock.getElapsedTime().asSeconds();
-			sfmlClock.restart();
+			frameTime = sfmlClock.restart();
 			fpsQueue.push_front(1.0/dt);
 			if (fpsQueue.size() > 16) fpsQueue.pop_back();
 			avgFPS = 0;
@@ -236,6 +260,15 @@ void Game::start(){
 
 
 		Resources::draw(*(Entities::getPlayer()));
+		//==================================================
+
+
+		animSprTest.update(frameTime);
+		Resources::draw(animSprTest);
+
+
+
+
 
 		std::ostringstream ss;
 		ss << "FPS: " << roundf(avgFPS);
