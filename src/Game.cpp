@@ -6,8 +6,7 @@
  */
 
 #include "Game.hpp"
-#include "Animation.hpp"
-#include "AnimatedSprite.hpp"
+
 
 enum gameMode { PAUSED, PLAYING };
 
@@ -94,7 +93,6 @@ void Game::start(){
 
 	Animation animTest;
 	animTest.setSpriteSheet(Resources::getTexture("testSprSheet"));
-
 	for (int i = 0; i < 3; i++){
 		for (int j = 0; j < 4; j++){
 			sf::IntRect spriteRect(i*32, j*32, 32, 32);

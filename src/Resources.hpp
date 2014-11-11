@@ -8,6 +8,8 @@
 #ifndef RESOURCES_HPP_
 #define RESOURCES_HPP_
 
+#include "Animation.hpp"
+
 #include <iostream>
 #include <string>
 

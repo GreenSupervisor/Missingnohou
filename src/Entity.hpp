@@ -8,6 +8,7 @@
 #ifndef ENTITY_HPP_
 #define ENTITY_HPP_
 
+
 #include <iostream>
 #include <string>
 
@@ -49,6 +50,8 @@ public:
 
 protected:
 	string spriteStr = "missing";
+
+
 
 	sf::Vector2f position;
 

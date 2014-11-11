@@ -10,6 +10,9 @@
 
 #include "Resources.hpp"
 #include "Entities.hpp"
+#include "Animation.hpp"
+#include "AnimatedSprite.hpp"
+
 
 #include "SFML/Graphics.hpp"
 #include "SFML/Audio.hpp"
