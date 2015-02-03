@@ -1,0 +1,4 @@
+Notes:
+
+Allow ssh key authentication to github repo interaction via commandline:
+	git remote set-url origin git@github.com:GreenSupervisor/Missingnohou.git
