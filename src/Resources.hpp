@@ -21,7 +21,7 @@
 using namespace libconfig;
 using namespace std;
 
-namespace Resources{
+namespace Resources {
 
 extern sf::Font& getFont(string fontName);
 extern void addFont(string fontName, string fontFile);

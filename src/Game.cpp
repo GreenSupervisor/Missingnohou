@@ -47,7 +47,7 @@ Game::Game() {
 
 	//init window
 	Resources::getWindow().create(sf::VideoMode(gameWidth, gameHeight, 32), "Missingnohou");
-
+	Resources::getWindow().setFramerateLimit(60);
 
 
 
