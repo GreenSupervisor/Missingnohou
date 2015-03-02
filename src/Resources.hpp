@@ -13,12 +13,9 @@
 #include <iostream>
 #include <string>
 
-#include <libconfig.h++>
-
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
-using namespace libconfig;
 using namespace std;
 
 namespace Resources {

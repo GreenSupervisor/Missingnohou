@@ -22,7 +22,6 @@ map<string, Animation> animMap;
 
 sf::RenderWindow gameWindow;
 
-Config *lvlCfg;
 
 sf::Font& getFont(string fontName){
 	return Resources::fontMap[fontName];
@@ -106,39 +105,34 @@ sf::RenderWindow& getWindow(){
 
 
 
-extern Config* getLvlCfg(){
-	return lvlCfg;
-}
 
 extern void setLvlCfg(const char *cfgFileName){
-	Config *cfg = new Config();
-	cfg->readFile(cfgFileName);
-	lvlCfg = cfg;
+	//eeh do something with jsoncpp here
 }
 
 bool fillCfgVariable (string cfgVarName, bool &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, int &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, unsigned int &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, long long &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, unsigned long long &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, float &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, double &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 bool fillCfgVariable (string cfgVarName, string &value){
-	return lvlCfg->lookupValue(cfgVarName, value);
+	return false;
 }
 
 

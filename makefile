@@ -17,7 +17,7 @@ DEBUG    = -g
 INCLUDES = -I./inc
 CFLAGS   = -Wall -pedantic -ansi -c $(DEBUG) $(INCLUDES)
 LDFLAGS  =
-LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lconfig++
+LIBS = -lsfml-graphics -lsfml-window -lsfml-system
 
 
 ifeq ($(SRCEXT), cpp)
